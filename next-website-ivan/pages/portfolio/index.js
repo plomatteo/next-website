@@ -21,7 +21,7 @@ function Portfolio({allProjectWorks}) {
 export async function getStaticProps() {
 
   const GET_PROJECTWORKS = gql`
-  query GetAllProjectWorks ($where: RootQueryToPostConnectionWhereArgs = {categoryId: 3}) {
+  query GetAllProjectWorks ($where: RootQueryToPostConnectionWhereArgs = {categoryId: 2}) {
     posts (where: $where) {
       nodes {
         slug
