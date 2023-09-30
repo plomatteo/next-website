@@ -15,7 +15,7 @@ function About({aboutPageData}) {
 export async function getStaticProps() {
 
   const GET_ABOUT_PAGE_DATA = gql`
-  query aboutPageData($id: ID = "cG9zdDo5") {
+  query aboutPageData($id: ID = "cG9zdDo3") {
     page(id: $id) {
       id
       title
