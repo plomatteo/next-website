@@ -1,0 +1,164 @@
+.homepageContainer {
+    height: calc(100vh - 100px);
+    position: static;
+    .heroSection {
+        height: 100vh;
+        width: 100%;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        background-color: black;
+        overflow: hidden;
+        video {
+            opacity: 0.7;
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-height: 105vh;
+            min-width: 100vw;
+            z-index: -1;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        &__overlay {
+            color: white;
+            padding: 100px;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: flex-end;
+
+            &__claim {
+                align-self: center;
+                width: 500px;
+                font-size: 36px;
+                text-shadow: rgba(255, 204, 0, 0.379) 1px 0 8px;
+            }
+        }
+    }
+}
+.aboutMe {
+    display: flex;
+    padding: 30px;
+    color: white;
+    > div {
+        width: 50%;
+    }
+}
+
+.videoRow {
+    display: flex;
+    color: white;
+    &__descriptionColumn {
+        width: 40%;
+        padding: 30px;
+        p {
+            font-size: 18px;
+        }
+    }
+    &__videoColumn {
+        width: 60%;
+        > video {
+            display: flex;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+    .videoRow {
+        display: flex;
+        color: white;
+        &__descriptionColumn {
+            width: 40%;
+            padding: 30px;
+            h1 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+    .videoRow {
+        flex-direction: column;
+        &__descriptionColumn {
+            width: 100%;
+            padding: 30px;
+            h1 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        &__videoColumn {
+            width: 100%;
+            > video {
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+    .videoRow:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+}
+
+.turistico {
+    color: #fee7f6;
+    background: radial-gradient(circle, rgba(51, 105, 172, 1) 0%, rgba(48, 99, 162, 1) 70%, rgba(45, 92, 150, 1) 100%);
+}
+
+.weddings {
+    color: #8d744d;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(253, 250, 242, 1) 75%,
+        rgba(254, 248, 230, 1) 100%
+    );
+}
+
+.aziendale {
+    color: #fbddc0;
+    background: radial-gradient(circle, rgba(150, 33, 54, 1) 0%, rgba(140, 31, 51, 1) 75%, rgba(128, 28, 46, 1) 100%);
+}
+
+.player {
+    width: 100%;
+    background-color: #fbddc0;
+    position: static;
+}
+
+.videoPlayer::-webkit-media-controls-play-button {
+    background-color: #8d744d;
+}
+
+.videoPlayer::-webkit-media-controls-panel ::-internal-media-controls-button-panel {
+    background-color: #8d744d !important;
+    color: #8d744d !important;
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, #000);
+    align-items: center;
+    transition: opacity 0.2s;
+}
