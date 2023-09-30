@@ -25,8 +25,8 @@ console.log(project)
 export async function getStaticProps({params}) {
 
     const GET_PROJECT_BY_ID = gql`
-    query GetProjectById($id: ID!) {
-        post(id: $id, idType: SLUG) {
+    query GetProjectById($id: ID!, $idType: PostIdType = SLUG) {
+        post(id: $id, idType: $idType) {
           content
           title
           date
