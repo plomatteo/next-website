@@ -7,7 +7,6 @@ import { gql } from '@apollo/client'
 
 function Portfolio({allProjectWorks}) {
   return <>
-  debugger
   <main>
     <div><h1>The Portfolio page</h1>
     <ul>
