@@ -9,7 +9,7 @@ export default function PortfolioProjectPage ({project}) {
 
     const router = useRouter();
     const projectId = router.query.id;
-
+console.log(project)
     return <>
     <main>
         <div>
@@ -26,7 +26,7 @@ export async function getStaticProps({params}) {
 
     const GET_PROJECT_BY_ID = gql`
     query GetProjectById($id: ID!) {
-        post(id: $id, idType: URI) {
+        post(id: $id, idType: SLUG) {
           content
           title
           date
@@ -39,6 +39,7 @@ export async function getStaticProps({params}) {
         }
       }
     `
+    
   const response = await client.query({
     query: GET_PROJECT_BY_ID,
     variables: {
@@ -47,6 +48,8 @@ export async function getStaticProps({params}) {
   })
   
     const project = response?.data?.post;
+
+    console.log(project)
   
     return {
       props: {
