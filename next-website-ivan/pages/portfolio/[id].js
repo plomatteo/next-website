@@ -36,12 +36,6 @@ export async function getStaticProps({params}) {
               categoryId
             }
           }
-          author {
-            node {
-                firstName
-                lastName
-            }
-          }
         }
       }
     `
